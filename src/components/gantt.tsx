@@ -36,18 +36,18 @@ const chartData = [
   },
   {
     milestone: "Retailer Module",
-    start: new Date(2025, 5, 24), // June 21, 2025
-    end: new Date(2025, 6, 7), // July 24, 2025
+    start: new Date(2025, 4, 24), // June 21, 2025
+    end: new Date(2025, 5, 27), // July 24, 2025
   },
   {
     milestone: "Admin Module",
-    start: new Date(2025, 6, 8), // July 25, 2025
-    end: new Date(2025, 7, 18), // August 14, 2025
+    start: new Date(2025, 5, 8), // July 25, 2025
+    end: new Date(2025, 6, 18), // August 14, 2025
   },
   {
     milestone: "System Integration and Testing",
-    start: new Date(2025, 7, 19), // August 15, 2025
-    end: new Date(2025, 7, 26), // August 21, 2025
+    start: new Date(2025, 6, 19), // August 15, 2025
+    end: new Date(2025, 6, 26), // August 21, 2025
   },
 ];
 
@@ -144,7 +144,6 @@ export default function Gantt() {
                   new Date(2025, 5, 1).getTime(), // Jun
                   new Date(2025, 6, 1).getTime(), // Jul
                   new Date(2025, 7, 1).getTime(), // Aug
-                  new Date(2025, 8, 1).getTime(), // Sep
                 ]}
               />
               <ChartTooltip
