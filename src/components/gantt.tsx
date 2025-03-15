@@ -149,9 +149,7 @@ export default function Gantt() {
               <ChartTooltip
                 content={
                   <ChartTooltipContent
-                    labelFormatter={(label, payload) =>
-                      payload[0]?.payload.milestone
-                    }
+                    labelFormatter={(payload) => payload[0]?.payload.milestone}
                   />
                 }
               />
