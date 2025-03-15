@@ -21,33 +21,33 @@ const chartData = [
   },
   {
     milestone: "Base Shared Features",
-    start: new Date(2025, 4, 3), // May 3, 2025
-    end: new Date(2025, 4, 17), // May 17, 2025
+    start: new Date(2025, 3, 3), // May 3, 2025
+    end: new Date(2025, 3, 17), // May 17, 2025
   },
   {
     milestone: "Guest Module",
-    start: new Date(2025, 4, 18), // May 18, 2025
-    end: new Date(2025, 4, 22), // May 22, 2025
+    start: new Date(2025, 3, 18), // May 18, 2025
+    end: new Date(2025, 3, 22), // May 22, 2025
   },
   {
     milestone: "Customer Module",
-    start: new Date(2025, 4, 22), // May 22, 2025
-    end: new Date(2025, 5, 24), // June 24, 2025
+    start: new Date(2025, 3, 22), // May 22, 2025
+    end: new Date(2025, 4, 24), // June 24, 2025
   },
   {
     milestone: "Retailer Module",
-    start: new Date(2025, 5, 24), // June 21, 2025
-    end: new Date(2025, 6, 27), // July 24, 2025
+    start: new Date(2025, 4, 24), // June 21, 2025
+    end: new Date(2025, 5, 27), // July 24, 2025
   },
   {
     milestone: "Admin Module",
-    start: new Date(2025, 6, 27), // July 25, 2025
-    end: new Date(2025, 7, 16), // August 14, 2025
+    start: new Date(2025, 5, 27), // July 25, 2025
+    end: new Date(2025, 6, 16), // August 14, 2025
   },
   {
     milestone: "System Integration and Testing",
-    start: new Date(2025, 7, 16), // August 15, 2025
-    end: new Date(2025, 7, 22), // August 21, 2025
+    start: new Date(2025, 6, 16), // August 15, 2025
+    end: new Date(2025, 6, 22), // August 21, 2025
   },
 ];
 
