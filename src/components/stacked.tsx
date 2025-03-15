@@ -39,10 +39,10 @@ const chartData = [
   },
   {
     milestone: "Retailer Module",
-    development: 112,
-    integration: 56,
-    testing: 56,
-    debugging: 23,
+    development: 270,
+    integration: 108,
+    testing: 108,
+    debugging: 54,
   },
   {
     milestone: "Admin Module",
