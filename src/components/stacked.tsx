@@ -16,67 +16,25 @@ import {
 
 // Data for the chart
 const chartData = [
+  { milestone: "UI/UX Design", design: 100, integration: 50 }, // Total: 248 hours
   {
     milestone: "Base Shared Features",
-    development: 115,
-    integration: 46,
-    testing: 46,
-    debugging: 23,
-  },
-  {
-    milestone: "Guest Module",
-    development: 17.5,
-    integration: 7,
-    testing: 7,
-    debugging: 3.5,
-  },
+    development: 64,
+  }, // Total: 112 hours
   {
     milestone: "Customer Module",
-    development: 250,
-    integration: 100,
-    testing: 100,
-    debugging: 50,
-  },
-  {
-    milestone: "Retailer Module",
-    development: 270,
-    integration: 108,
-    testing: 108,
-    debugging: 54,
-  },
-  {
-    milestone: "Admin Module",
-    development: 165,
-    integration: 66,
-    testing: 66,
-    debugging: 33,
-  },
-  { milestone: "System Integration and Testing", integration: 50, testing: 50 },
-  { milestone: "UI/UX Design", integration: 50, design: 200 },
+    development: 116,
+  }, // Total: 212 hours
+  { milestone: "Admin Module", development: 116 }, // Total: 328 hours
+  { milestone: "System Integration and Testing", integration: 50, testing: 50 }, // Total: 56 hours
 ];
 
 // Configuration for stages
 const chartConfig = {
-  development: {
-    label: "Development",
-    color: "hsl(210, 100%, 40%)",
-  },
-  integration: {
-    label: "Integration",
-    color: "hsl(210, 100%, 60%)",
-  },
-  testing: {
-    label: "Testing",
-    color: "hsl(210, 100%, 80%)",
-  },
-  debugging: {
-    label: "Debugging",
-    color: "hsl(210, 100%, 90%)",
-  },
-  design: {
-    label: "Design",
-    color: "hsl(210, 50%, 70%)",
-  },
+  development: { label: "Development", color: "hsl(210, 100%, 40%)" },
+  integration: { label: "Integration", color: "hsl(210, 100%, 60%)" },
+  testing: { label: "Testing", color: "hsl(210, 100%, 80%)" },
+  design: { label: "Design", color: "hsl(210, 50%, 70%)" },
 };
 
 export default function Stacked() {
@@ -127,11 +85,6 @@ export default function Stacked() {
                 dataKey="testing"
                 stackId="a"
                 fill={chartConfig.testing.color}
-              />
-              <Bar
-                dataKey="debugging"
-                stackId="a"
-                fill={chartConfig.debugging.color}
               />
               <Bar
                 dataKey="design"

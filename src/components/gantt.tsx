@@ -12,46 +12,34 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart";
 
-// Updated data for the Gantt chart
 const chartData = [
   {
     milestone: "UI/UX Design",
-    start: new Date(2025, 3, 1), // April 1, 2025
-    end: new Date(2025, 4, 2), // May 2, 2025
+    start: new Date(2025, 3, 1),
+    end: new Date(2025, 3, 20),
   },
   {
     milestone: "Base Shared Features",
-    start: new Date(2025, 3, 3), // May 3, 2025
-    end: new Date(2025, 3, 17), // May 17, 2025
-  },
-  {
-    milestone: "Guest Module",
-    start: new Date(2025, 3, 18), // May 18, 2025
-    end: new Date(2025, 3, 22), // May 22, 2025
+    start: new Date(2025, 3, 21),
+    end: new Date(2025, 3, 29),
   },
   {
     milestone: "Customer Module",
-    start: new Date(2025, 3, 22), // May 22, 2025
-    end: new Date(2025, 5, 24), // June 24, 2025
-  },
-  {
-    milestone: "Retailer Module",
-    start: new Date(2025, 4, 24), // June 21, 2025
-    end: new Date(2025, 6, 25), // July 24, 2025
+    start: new Date(2025, 3, 30),
+    end: new Date(2025, 4, 14),
   },
   {
     milestone: "Admin Module",
-    start: new Date(2025, 5, 8), // July 25, 2025
-    end: new Date(2025, 6, 18), // August 14, 2025
+    start: new Date(2025, 4, 15),
+    end: new Date(2025, 4, 30),
   },
   {
     milestone: "System Integration and Testing",
-    start: new Date(2025, 6, 24), // August 15, 2025
-    end: new Date(2025, 6, 31), // August 21, 2025
+    start: new Date(2025, 4, 31),
+    end: new Date(2025, 5, 12),
   },
 ];
 
-// Chart configuration (unchanged)
 const chartConfig = {
   task: {
     label: "Task Duration",
@@ -59,7 +47,6 @@ const chartConfig = {
   },
 };
 
-// Custom component to render Gantt bars (unchanged)
 const GanttBars = ({
   data,
   xScale,
@@ -90,21 +77,24 @@ const GanttBars = ({
   });
 };
 
+const allDates = chartData.flatMap((d) => [d.start.getTime(), d.end.getTime()]);
+const minDate = Math.min(...allDates);
+const maxDate = Math.max(...allDates);
+
+// Formatter function for X-axis ticks
+const formatMonth = (timestamp: any) => {
+  return tickLabels[timestamp] || "";
+};
+
+// Define the tick labels mapping
+const tickLabels = {
+  [new Date(2025, 3, 1).getTime()]: "Month 1", // April 1, 2025
+  [new Date(2025, 4, 1).getTime()]: "Month 2", // May 1, 2025
+  [new Date(2025, 5, 1).getTime()]: "Month 3", // June 1, 2025
+  [new Date(2025, 6, 1).getTime()]: "Month 4", // July 1, 2025
+};
+
 export default function Gantt() {
-  // Determine the time range for the X-axis
-  const allDates = chartData.flatMap((d) => [
-    d.start.getTime(),
-    d.end.getTime(),
-  ]);
-  const minDate = Math.min(...allDates);
-  const maxDate = Math.max(...allDates);
-
-  // Custom tick formatter for months (unchanged)
-  const formatMonth = (timestamp: any) => {
-    const date = new Date(timestamp);
-    return date.toLocaleString("default", { month: "short" });
-  };
-
   return (
     <Card className="w-full md:w-[50%] mx-auto mt-20">
       <CardHeader>
@@ -139,11 +129,10 @@ export default function Gantt() {
                 domain={[minDate, maxDate]}
                 tickFormatter={formatMonth}
                 ticks={[
-                  new Date(2025, 3, 1).getTime(), // Apr
-                  new Date(2025, 4, 1).getTime(), // May
-                  new Date(2025, 5, 1).getTime(), // Jun
-                  new Date(2025, 6, 1).getTime(), // Jul
-                  new Date(2025, 7, 1).getTime(), // Aug
+                  new Date(2025, 3, 1).getTime(), // April 1
+                  new Date(2025, 4, 1).getTime(), // May 1
+                  new Date(2025, 5, 1).getTime(), // June 1
+                  new Date(2025, 6, 1).getTime(), // July 1
                 ]}
               />
               <ChartTooltip
